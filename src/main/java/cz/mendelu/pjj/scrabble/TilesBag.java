@@ -8,7 +8,7 @@ public class TilesBag {
 
     }
 
-    public static void CreateTilesBag(){
+    public static void createTilesBag(){
         TheTilesBag[0] = new Tile(	'*',0,2);
         TheTilesBag[1] = new Tile(	'A',1,9);
         TheTilesBag[2] = new Tile(	'E',1,12);
@@ -36,7 +36,7 @@ public class TilesBag {
         TheTilesBag[24] = new Tile(	'X',8,1);
         TheTilesBag[25] = new Tile(	'Q',10,1);
         TheTilesBag[26] = new Tile(	'Z',10,1);
-        System.out.println("** ok **");
+        //System.out.println("** ok **");
     }
 
     private static boolean checkCountOfSameTails(int i) {

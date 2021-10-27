@@ -1,5 +1,7 @@
 package cz.mendelu.pjj.scrabble;
 
+import java.util.Scanner;
+
 import static cz.mendelu.pjj.scrabble.TilesBag.*;
 
 public class Player {
@@ -7,7 +9,8 @@ public class Player {
     private int score;
     private char handPlayer[];
 
-    public Player(){
+
+    public Player(Scanner name, char[] tiles){
 
     }
 
@@ -36,10 +39,11 @@ public class Player {
 
     public void showPlayerHand(){
         for (int i = 0; i<7; i++) {
-            System.out.println(handPlayer[i]);
+            System.out.print(handPlayer[i] + " ");
         }
     }
-//test if "znak" changed ???
+
+    //test if "znak" changed ???
     //test if count of tiles have groven ?
     //TODO:
 
