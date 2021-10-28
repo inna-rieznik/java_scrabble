@@ -42,11 +42,7 @@ public class Player {
             System.out.print(handPlayer[i] + " ");
         }
     }
-
-    //test if "znak" changed ???
-    //test if count of tiles have groven ?
-    //TODO:
-
+    
     public char swapOneTile(char znak){
         for (int i = 0; i<7; i++) {
             if(handPlayer[i] == znak){
