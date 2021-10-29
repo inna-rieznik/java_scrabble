@@ -1,5 +1,8 @@
 package cz.mendelu.pjj.scrabble;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.nio.Buffer;
 import java.util.Scanner;
 
 import static cz.mendelu.pjj.scrabble.TilesBag.*;
@@ -42,7 +45,7 @@ public class Player {
             System.out.print(handPlayer[i] + " ");
         }
     }
-    
+
     public char swapOneTile(char znak){
         for (int i = 0; i<7; i++) {
             if(handPlayer[i] == znak){
@@ -61,8 +64,52 @@ public class Player {
     }
 
 
-    public void setPlayerHand(int i, char letter){
+    //TODO переименовать
+    public void chooseLetter() {
+        StringBuffer word = new StringBuffer();
+        Scanner scanner = new Scanner(System.in);
 
+        String s_letter = scanner.nextLine();
+
+        char letter = s_letter.charAt(0);
+
+            if (proverka(letter) == true){
+                //TODO Убрать из руки буквы
+            }else{
+
+            }
+    }
+    //+ метод создать слово
+    //+ метод убрать буквы из руки в если слово будет не правельным.
+
+// метод проверяет корректность введенной буквы
+// todo в идеале целое слово так проверять га соответсвие символов
+    private boolean proverka(char letter){
+    boolean letterEx = false;
+        for (int i =0; i<7; i++){
+            if (letter == handPlayer[i]){
+                letterEx = true;
+                break;
+            } else {
+                letterEx = false;
+            }
+        }
+        if (letterEx == true){
+        return true;
+        } else {
+            return false;
+        }
     }
 
+    /**  хотел сделать воод целого слова но нормально не придумал как
+    private void proverka(String word, char handPlayer[]){
+        for (int i=0; i< word.length(); i++){
+            for (int j=0; j<7;j++){
+                if (word.charAt(i) == handPlayer[i]){
+
+                };
+            }
+        }
+    }
+     **/
 }

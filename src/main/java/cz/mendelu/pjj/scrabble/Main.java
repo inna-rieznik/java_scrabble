@@ -11,8 +11,10 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("******************");
-        createGameBoard();
-        showGameBoard();
+        createTilesBag();
+        Player player1 = new Player("Georgii", get7tiles());
+        player1.showPlayerHand();
+        player1.chooseLetter();
 
 
     }
