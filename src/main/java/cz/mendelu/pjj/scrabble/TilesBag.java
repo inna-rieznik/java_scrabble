@@ -2,8 +2,6 @@ package cz.mendelu.pjj.scrabble;
 
 public class TilesBag {
    public static Tile[] TheTilesBag = new Tile[27];
-    static char[] handBuffer = new char[7];
-
     public TilesBag() {
 
     }
@@ -57,6 +55,7 @@ public class TilesBag {
 
 
     public static char[] get7tiles() {
+        char[] handBuffer = new char[7];
         for (int i = 0; i < 7; i++) {
             handBuffer[i] = getOneTile();
         }

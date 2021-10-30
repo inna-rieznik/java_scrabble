@@ -10,6 +10,10 @@ public class Cell {
         bonus = null;
     }
 
+    public Cell(char letter){
+        this.letter = letter;
+    }
+
     public char getLetter() {
         return letter;
     }

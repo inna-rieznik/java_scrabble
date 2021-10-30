@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cz.mendelu.pjj.scrabble.GameBoardTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-10-30T16:09:56" hostname="DESKTOP-6P7EMEJ" time="0.035">
+  <properties/>
+  <testcase name="addLetterToXYOutOfBound()" classname="cz.mendelu.pjj.scrabble.GameBoardTest" time="0.034"/>
+  <testcase name="addLetterToXY()" classname="cz.mendelu.pjj.scrabble.GameBoardTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

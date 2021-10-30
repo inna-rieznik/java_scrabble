@@ -1,16 +1,30 @@
 package cz.mendelu.pjj.scrabble;
 
+import com.sun.tools.jdeprscan.scan.Scan;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.Buffer;
 import java.util.Scanner;
 
 import static cz.mendelu.pjj.scrabble.TilesBag.*;
+import static cz.mendelu.pjj.scrabble.GameBoard.*;
 
+
+//nacist soubor po radcich a udelat s neho pole,
+//if slovo existuje v hash mape -> existuje/ne ?
+
+//while nekonecny loop
+//spustit aplikaci dvakrat jako dva hraci -> simiulovat na pc
+
+//napriklad kdyz na rade hrac 1 pro neho zobrazit prikazy : pridat slovo, pass, skip
+
+//
 public class Player {
     private String name;
     private int score;
     private char handPlayer[];
+    static StringBuilder word = new StringBuilder();
 
 
     public Player(Scanner name, char[] tiles){
@@ -63,42 +77,53 @@ public class Player {
         return znak;
     }
 
-
+//jestli slovo existuje jen pak davat bonusy
     //TODO переименовать
-    public void chooseLetter() {
-        StringBuffer word = new StringBuffer();
-        Scanner scanner = new Scanner(System.in);
+    public void chooseLetter(GameBoard board) {
+        //StringBuffer word = new StringBuffer();
+        System.out.println("Add x coordinate for letter");
+        Scanner s_x = new Scanner(System.in);
+        int x = s_x.nextInt();
+        System.out.println("Add y coordinate for letter");
+        Scanner s_y = new Scanner(System.in);
+        int y = s_y.nextInt();
+        System.out.println("Add letter");
+        Scanner s_letter = new Scanner(System.in);
+        //String s_letter = scanner.nextLine();
 
-        String s_letter = scanner.nextLine();
-
-        char letter = s_letter.charAt(0);
-
-            if (proverka(letter) == true){
+        char letter = s_letter.nextLine().charAt(0);
+            if (isLetterInHand(letter)){
                 //TODO Убрать из руки буквы
+                //pridat do bordu pismeno
+                board.addLetterToXY(x,y,letter);
             }else{
-
+                System.out.println("You dont have this letter " + letter);
             }
+
     }
     //+ метод создать слово
     //+ метод убрать буквы из руки в если слово будет не правельным.
+    public void createWord(){
+
+    }
+
+    //TODO get word from choosen letters
 
 // метод проверяет корректность введенной буквы
 // todo в идеале целое слово так проверять га соответсвие символов
-    private boolean proverka(char letter){
+    private boolean isLetterInHand(char letter){
     boolean letterEx = false;
         for (int i =0; i<7; i++){
             if (letter == handPlayer[i]){
                 letterEx = true;
                 break;
+                //return true;
             } else {
                 letterEx = false;
+                //return false;
             }
         }
-        if (letterEx == true){
-        return true;
-        } else {
-            return false;
-        }
+        return letterEx;
     }
 
     /**  хотел сделать воод целого слова но нормально не придумал как

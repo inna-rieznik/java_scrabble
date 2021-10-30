@@ -7,6 +7,19 @@ public class GameBoard {
 
     }
 
+    public void addLetterToXY(int x, int y, char letter){
+     Board[x][y].setLetter(letter);
+     //TODO controll if cell is empty
+     //TODO control if the x and y is in range
+     //junit test ktery vola add letter
+     // 1. bord je
+     //2. validni scenar x in range 0-15(x je male/velke)
+     //3. 2. for y
+     // x y out of range
+
+     //
+    }
+
     public static void createGameBoard(){
        for (int i =0; i < 15; i++){
             for (int j=0; j < 15; j++ ){
@@ -91,8 +104,14 @@ public class GameBoard {
     }
 
     public static void showGameBoard(){
-     for (int i =0; i < 15; i++){
-      for (int j=0; j < 15; j++ ){
+     System.out.print("  ");
+     for(int k=0; k<5; k++){
+      System.out.print(k + "   ");
+     }
+     System.out.println();
+     for (int i=0; i < 5; i++){
+      System.out.print(i);
+      for (int j=0; j < 5; j++ ){
        System.out.print("["+Board[i][j].getLetter() + "] ");
       }
       System.out.println();
