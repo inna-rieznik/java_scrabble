@@ -8,9 +8,17 @@ public class GameBoard {
     }
 
     public void addLetterToXY(int x, int y, char letter){
-     Board[x][y].setLetter(letter);
-     //TODO controll if cell is empty
-     //TODO control if the x and y is in range
+     if ( x>0 && x<16 && y>0 && y<16 ){
+      if (Board[x-1][y-1].getLetter() == ' '){
+       Board[x-1][y-1].setLetter(letter);
+      } else {
+       System.out.println("BUKVA EST");
+      }
+
+     }else {
+      System.out.println("x or y is out of range");
+     }
+
      //junit test ktery vola add letter
      // 1. bord je
      //2. validni scenar x in range 0-15(x je male/velke)
@@ -105,13 +113,13 @@ public class GameBoard {
 
     public static void showGameBoard(){
      System.out.print("  ");
-     for(int k=0; k<5; k++){
-      System.out.print(k + "   ");
+     for(int k=0; k<15; k++){
+      System.out.print(k + 1 + "   ");
      }
      System.out.println();
-     for (int i=0; i < 5; i++){
-      System.out.print(i);
-      for (int j=0; j < 5; j++ ){
+     for (int i=0; i < 15; i++){
+      System.out.print(i + 1);
+      for (int j=0; j < 15; j++ ){
        System.out.print("["+Board[i][j].getLetter() + "] ");
       }
       System.out.println();
