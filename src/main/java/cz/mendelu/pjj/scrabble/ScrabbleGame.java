@@ -36,7 +36,7 @@ public class ScrabbleGame {
 
     static void startGame(){
         GameBoard board = new GameBoard();
-        System.out.println("******************");
+        System.out.println("*********************************************");
         createTilesBag();
         Player player1 = new Player("Georgii", get7tiles());
         Player player2 = new Player("Jon", get7tiles());
