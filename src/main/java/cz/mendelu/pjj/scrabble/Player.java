@@ -81,13 +81,13 @@ public class Player {
     //TODO переименовать
     public void chooseLetter(GameBoard board) {
         //StringBuffer word = new StringBuffer();
-        System.out.println("Add x coordinate for letter");
+        System.out.print("*Add X coordinate for letter(number from 1 to 15): ");
         Scanner s_x = new Scanner(System.in);
         int x = s_x.nextInt();
-        System.out.println("Add y coordinate for letter");
+        System.out.print("*Add Y coordinate for letter(number from 1 to 15): ");
         Scanner s_y = new Scanner(System.in);
         int y = s_y.nextInt();
-        System.out.println("Add letter");
+        System.out.print("*Add letter: ");
         Scanner s_letter = new Scanner(System.in);
         //String s_letter = scanner.nextLine();
 
@@ -95,9 +95,9 @@ public class Player {
             if (isLetterInHand(letter)){
                 //TODO Убрать из руки буквы
                 //pridat do bordu pismeno
-                board.addLetterToXY(x,y,letter);
+                board.addLetterToXY(x, y, letter);
             }else{
-                System.out.println("You dont have this letter " + letter);
+                System.out.print("You dont have this letter " + letter);
             }
 
     }

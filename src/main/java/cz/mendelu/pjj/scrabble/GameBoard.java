@@ -112,15 +112,24 @@ public class GameBoard {
     }
 
     public static void showGameBoard(){
-     System.out.print("  ");
+     System.out.print("   ");
      for(int k=0; k<15; k++){
-      System.out.print(k + 1 + "   ");
+      System.out.print(k + 1 + "  ");
      }
      System.out.println();
      for (int i=0; i < 15; i++){
-      System.out.print(i + 1);
+      if(i<9){
+       System.out.print((i + 1) + " ");
+      }else{
+       System.out.print(i + 1);
+      }
+
       for (int j=0; j < 15; j++ ){
-       System.out.print("["+Board[i][j].getLetter() + "] ");
+       if(j<10){
+        System.out.print("["+Board[i][j].getLetter() + "]");
+       }else{
+        System.out.print(" ["+Board[i][j].getLetter() + "]");
+       }
       }
       System.out.println();
      }
