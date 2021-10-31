@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Dictionary {
-
+    /**
+     *
+     */
     public Dictionary(String dic, WordFilter wordFilter){
 
     }

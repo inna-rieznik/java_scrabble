@@ -26,16 +26,108 @@ public class Player {
     private char handPlayer[];
     static StringBuilder word = new StringBuilder();
 
-
+    /**
+     *
+     */
     public Player(Scanner name, char[] tiles){
 
     }
-
+    /**
+     *
+     */
     public Player(String name,char[] handPlayer) {
         this.name = name;
         score = 0;
         this.handPlayer = handPlayer;
 
+    }
+
+    /**
+     *
+     *
+     */
+    public void showPlayerHand(){
+        for (int i = 0; i<7; i++) {
+            System.out.print(handPlayer[i] + " ");
+        }
+    }
+
+    /**
+     * Vyměňte 1 kámen
+     *
+     * @autor xmeliaki
+     * @version etapa 3
+     */
+    public char swapOneTile(char znak){
+        for (int i = 0; i<7; i++) {
+            if(handPlayer[i] == znak){
+               handPlayer[i] = getOneTile();
+               return handPlayer[i];
+            }
+        }
+        for (int i = 0; i<TheTilesBag.length; i++) {
+            if(TheTilesBag[i].getLetter() == znak){
+                TheTilesBag[i].setCount(TheTilesBag[i].getCount()+1);
+            }
+        }
+        return znak;
+    }
+
+
+    /**
+     * @autor xrieznik
+     * @version etapa 3
+     */
+    public void chooseLetter(GameBoard board) {   //@jestli slovo existuje jen pak davat bonusy
+        //StringBuffer word = new StringBuffer();
+        System.out.println("Add x coordinate for letter");
+        Scanner s_x = new Scanner(System.in);
+        int x = s_x.nextInt();
+        System.out.println("Add y coordinate for letter");
+        Scanner s_y = new Scanner(System.in);
+        int y = s_y.nextInt();
+        System.out.println("Add letter");
+        Scanner s_letter = new Scanner(System.in);
+        //String s_letter = scanner.nextLine();
+
+        char letter = s_letter.nextLine().charAt(0);
+            if (isLetterInHand(letter)){
+                //TODO Убрать из руки буквы
+                //pridat do bordu pismeno
+                board.addLetterToXY(x,y,letter);
+            }else{
+                System.out.println("You dont have this letter " + letter);
+            }
+
+    }
+    /**
+     *
+     */
+    public void createWord(){
+    //TODO get word from choosen letters
+        throw new UnsupportedOperationException("Not implemented yet.");
+    }
+
+
+    /**
+     * Metoda kontroluje správnost zadaného písmene, hráč má vybrané písmeno.
+     *
+     * @autor xmeliaki
+     * @version etapa 3
+     */
+    private boolean isLetterInHand(char letter){
+    boolean letterEx = false;
+        for (int i =0; i<7; i++){
+            if (letter == handPlayer[i]){
+                letterEx = true;
+                break;
+                //return true;
+            } else {
+                letterEx = false;
+                //return false;
+            }
+        }
+        return letterEx;
     }
 
     public String getName() {
@@ -53,88 +145,4 @@ public class Player {
     public void setScore(int score) {
         this.score = score;
     }
-
-    public void showPlayerHand(){
-        for (int i = 0; i<7; i++) {
-            System.out.print(handPlayer[i] + " ");
-        }
-    }
-
-    public char swapOneTile(char znak){
-        for (int i = 0; i<7; i++) {
-            if(handPlayer[i] == znak){
-               handPlayer[i] = getOneTile();
-               return handPlayer[i];
-            }
-
-        }
-        for (int i = 0; i<TheTilesBag.length; i++) {
-            if(TheTilesBag[i].getLetter() == znak){
-                TheTilesBag[i].setCount(TheTilesBag[i].getCount()+1);
-            }
-
-        }
-        return znak;
-    }
-
-//jestli slovo existuje jen pak davat bonusy
-    //TODO переименовать
-    public void chooseLetter(GameBoard board) {
-        //StringBuffer word = new StringBuffer();
-        System.out.print("*Add X coordinate for letter(number from 1 to 15): ");
-        Scanner s_x = new Scanner(System.in);
-        int x = s_x.nextInt();
-        System.out.print("*Add Y coordinate for letter(number from 1 to 15): ");
-        Scanner s_y = new Scanner(System.in);
-        int y = s_y.nextInt();
-        System.out.print("*Add letter: ");
-        Scanner s_letter = new Scanner(System.in);
-        //String s_letter = scanner.nextLine();
-
-        char letter = s_letter.nextLine().charAt(0);
-            if (isLetterInHand(letter)){
-                //TODO Убрать из руки буквы
-                //pridat do bordu pismeno
-                board.addLetterToXY(x, y, letter);
-            }else{
-                System.out.print("You dont have this letter " + letter);
-            }
-
-    }
-    //+ метод создать слово
-    //+ метод убрать буквы из руки в если слово будет не правельным.
-    public void createWord(){
-
-    }
-
-    //TODO get word from choosen letters
-
-// метод проверяет корректность введенной буквы
-// todo в идеале целое слово так проверять га соответсвие символов
-    private boolean isLetterInHand(char letter){
-    boolean letterEx = false;
-        for (int i =0; i<7; i++){
-            if (letter == handPlayer[i]){
-                letterEx = true;
-                break;
-                //return true;
-            } else {
-                letterEx = false;
-                //return false;
-            }
-        }
-        return letterEx;
-    }
-
-    /**  хотел сделать воод целого слова но нормально не придумал как
-    private void proverka(String word, char handPlayer[]){
-        for (int i=0; i< word.length(); i++){
-            for (int j=0; j<7;j++){
-                if (word.charAt(i) == handPlayer[i]){
-
-                };
-            }
-        }
-    }
-     **/
 }

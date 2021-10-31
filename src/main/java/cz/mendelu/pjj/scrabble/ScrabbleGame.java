@@ -1,6 +1,5 @@
 package cz.mendelu.pjj.scrabble;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 import static cz.mendelu.pjj.scrabble.GameBoard.createGameBoard;
@@ -33,7 +32,11 @@ public class ScrabbleGame {
        System.out.println("******************");
  */
     }
-
+    /**
+     * @autor xrieznik
+     * @version etapa 3
+     *
+     */
     static void startGame(){
         GameBoard board = new GameBoard();
         System.out.println("******************");
@@ -44,42 +47,37 @@ public class ScrabbleGame {
         System.out.println();
         createGameBoard();
         Player activePlayer = player1;
-        System.out.println("Now plays player: " + activePlayer.getName());
+        System.out.println("Hraje hrac: " + activePlayer.getName());
 
         while (true){
-            System.out.println();
-            System.out.print("Chose a command: \nEXIT - to finish the game \nPASS - to let another player create word" +
-                    "\nWORD - to eenter new word \nLETTERS - to show what letters you have \nBOARD - to show game board" +
-                    "\nstart there -> ");
             Scanner s_input = new Scanner(System.in);
             String input = s_input.nextLine();
             if (input.equals("exit")) {
-                System.out.println("The End");
+                System.out.println("Konec hry");
                 break;
-            } else if (input.toLowerCase().equals("pass")) {
+            } else if (input.equals("pass")) {
                 activePlayer = player2;
-                System.out.println("Now plays " + activePlayer.getName());
-            } else if (input.toLowerCase().equals("word")) {
+                System.out.println("Hraje hrac " + activePlayer.getName());
+            } else if (input.equals("slovo")) {
                 //TODO zkontrolovat to slovo jestli existuje v dictionary
                 //TODO jestli existuje odebrat pismena u playera, pridat body
                 //TODO jestli slovo neexistuje odebrat pismena s bordu
                 activePlayer.chooseLetter(board);
-            } else if (input.toLowerCase().equals("letters")) {
-                System.out.println();
-                System.out.print("Letters: ");
+            } else if (input.equals("pismena")) {
                 activePlayer.showPlayerHand();
-                System.out.println();
-            } else if (input.toLowerCase().equals("board")) {
+            } else if (input.equals("board")) {
                 showGameBoard();
             }
             else {
-                System.out.println("Dont know this command");
+                System.out.println("Neznamy prikaz");
             }
         }
     }
 //
 
-
+    /**
+     *
+     */
     private void checkEndOfTheGame() {
 
     }

@@ -6,7 +6,12 @@ public class GameBoard {
     public GameBoard() {
 
     }
-
+   /**
+    * Metoda provádění přesunu
+    *
+    * @autor xrieznik
+    * @version etapa 3
+    */
     public void addLetterToXY(int x, int y, char letter){
      if ( x>0 && x<16 && y>0 && y<16 ){
       if (Board[x-1][y-1].getLetter() == ' '){
@@ -27,7 +32,10 @@ public class GameBoard {
 
      //
     }
-
+    /**
+     * @autor xmeliaki
+     * @version etapa 3
+     */
     public static void createGameBoard(){
        for (int i =0; i < 15; i++){
             for (int j=0; j < 15; j++ ){
@@ -110,26 +118,20 @@ public class GameBoard {
         Board[14][11].setBonus("2L");
 
     }
-
+ /**
+  * @autor xmeliaki
+  * @version etapa 3
+  */
     public static void showGameBoard(){
-     System.out.print("   ");
+     System.out.print("  ");
      for(int k=0; k<15; k++){
-      System.out.print(k + 1 + "  ");
+      System.out.print(k + 1 + "   ");
      }
      System.out.println();
      for (int i=0; i < 15; i++){
-      if(i<9){
-       System.out.print((i + 1) + " ");
-      }else{
-       System.out.print(i + 1);
-      }
-
+      System.out.print(i + 1);
       for (int j=0; j < 15; j++ ){
-       if(j<10){
-        System.out.print("["+Board[i][j].getLetter() + "]");
-       }else{
-        System.out.print(" ["+Board[i][j].getLetter() + "]");
-       }
+       System.out.print("["+Board[i][j].getLetter() + "] ");
       }
       System.out.println();
      }
