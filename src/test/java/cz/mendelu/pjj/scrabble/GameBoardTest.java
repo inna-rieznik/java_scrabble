@@ -7,23 +7,46 @@ import sun.jvm.hotspot.utilities.Assert;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameBoardTest {
-
+    /** 
+     * @autor xrieznik
+     * @version etapa 2
+     */
     @Test
-    void addLetterToXY() {
-        int x = 1;
+    void addLetterToXYTest() {
+        int x = 2;
+        int y = 2;
+        char a = 'A';
+        GameBoard b = new GameBoard();
+        GameBoard.createGameBoard();
+        b.addLetterToXY(x, y, a);
+        assertEquals(a, GameBoard.Board[x-1][y-1].getLetter());
+    }
+
+    /**
+     * @autor xrieznik
+     * @version etapa 2
+     */
+   @Test
+    void addLetterToXYOutOfBoundX() {
+        int x = 100;
         int y = 1;
         char a = 'A';
         GameBoard b = new GameBoard();
         GameBoard.createGameBoard();
 
-        b.addLetterToXY(x, y, a);
-        assertEquals(a, GameBoard.Board[x][y].getLetter());
+       // Exception exception =
+        assertThrows(
+                ArrayIndexOutOfBoundsException.class,
+                () -> b.addLetterToXY(x, y, a));
+        //assertTrue(exception.getMessage().contains("index"));
+
     }
 
+
     @Test
-    void addLetterToXYOutOfBound() {
-        int x = 100;
-        int y = 1;
+    void addLetterToXYOutOfBoundY() {
+        int x = 2;
+        int y = -10;
         char a = 'A';
         GameBoard b = new GameBoard();
         GameBoard.createGameBoard();
@@ -32,5 +55,6 @@ class GameBoardTest {
             b.addLetterToXY(x, y, a);
         });
     }
+
 
 }

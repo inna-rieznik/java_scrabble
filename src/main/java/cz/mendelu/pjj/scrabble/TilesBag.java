@@ -1,11 +1,18 @@
 package cz.mendelu.pjj.scrabble;
 
 public class TilesBag {
-   public static Tile[] TheTilesBag = new Tile[27];
+    public static Tile[] TheTilesBag = new Tile[27];
+    /**
+     *
+     */
     public TilesBag() {
-
     }
 
+    /**
+     * @autor xmeliaki
+     * @version etapa 3
+     *
+     */
     public static void createTilesBag(){
         TheTilesBag[0] = new Tile(	'*',0,2);
         TheTilesBag[1] = new Tile(	'A',1,9);
@@ -34,9 +41,12 @@ public class TilesBag {
         TheTilesBag[24] = new Tile(	'X',8,1);
         TheTilesBag[25] = new Tile(	'Q',10,1);
         TheTilesBag[26] = new Tile(	'Z',10,1);
-        //System.out.println("** ok **");
     }
 
+    /**
+     * @autor xmeliaki
+     * @version etapa 3
+     */
     private static boolean checkCountOfSameTails(int i) {
         if (TheTilesBag[i].getCount() > 0) {
             return true;
@@ -45,6 +55,11 @@ public class TilesBag {
         }
     }
 
+    /**
+     * Metoda vydávání 1 kamene
+     * @autor xmeliaki
+     * @version etapa 3
+     */
     public static char getOneTile() {
         int tileNumber = (int) (Math.random() * 27);
         if (checkCountOfSameTails(tileNumber) == true) {
@@ -53,7 +68,12 @@ public class TilesBag {
         } else return getOneTile();
     }
 
-
+    /**
+     * Metoda 7 vydávání kamene
+     * @autor xrieznik
+     * @version etapa 3
+     *
+     */
     public static char[] get7tiles() {
         char[] handBuffer = new char[7];
         for (int i = 0; i < 7; i++) {

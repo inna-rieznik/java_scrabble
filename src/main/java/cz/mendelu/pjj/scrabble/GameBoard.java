@@ -6,18 +6,22 @@ public class GameBoard {
     public GameBoard() {
 
     }
-
+   /**
+    * Metoda pridava pismeno do bunky
+    *
+    * @autor xrieznik
+    * @version etapa 3
+    */
     public void addLetterToXY(int x, int y, char letter){
-     if ( x>0 && x<16 && y>0 && y<16 ){
-      if (Board[x-1][y-1].getLetter() == ' '){
+     //if ( (x>0 && x<16) && (y>0 && y<16) ){
+      //if (Board[x-1][y-1].getLetter() == ' '){
        Board[x-1][y-1].setLetter(letter);
-      } else {
-       System.out.println("BUKVA EST");
-      }
-
-     }else {
-      System.out.println("x or y is out of range");
-     }
+     // } else {
+      // System.out.println("There is a letter in the cell: " + x + " " + y);
+      //}
+    // }else {
+    //  System.out.println("x or y is out of range");
+    // }
 
      //junit test ktery vola add letter
      // 1. bord je
@@ -27,7 +31,10 @@ public class GameBoard {
 
      //
     }
-
+    /**
+     * @autor xmeliaki
+     * @version etapa 3
+     */
     public static void createGameBoard(){
        for (int i =0; i < 15; i++){
             for (int j=0; j < 15; j++ ){
@@ -110,29 +117,33 @@ public class GameBoard {
         Board[14][11].setBonus("2L");
 
     }
-
-    public static void showGameBoard(){
+ /**
+  * @autor xmeliaki
+  * @version etapa 3
+  */
+    public static void showGameBoard() {
      System.out.print("   ");
-     for(int k=0; k<15; k++){
-      System.out.print(k + 1 + "  ");
+     for (int k = 0; k < 15; k++) {
+      System.out.print((k + 1) + "  ");
      }
      System.out.println();
-     for (int i=0; i < 15; i++){
-      if(i<9){
+     for (int i = 0; i < 15; i++) {
+      if (i < 9) {
        System.out.print((i + 1) + " ");
-      }else{
-       System.out.print(i + 1);
+      } else {
+       System.out.print((i+1));
       }
 
-      for (int j=0; j < 15; j++ ){
-       if(j<10){
-        System.out.print("["+Board[i][j].getLetter() + "]");
-       }else{
-        System.out.print(" ["+Board[i][j].getLetter() + "]");
+      for (int j = 0; j < 15; j++) {
+       if (j < 10) {
+        System.out.print("[" + Board[i][j].getLetter() + "]");
+       } else {
+        System.out.print(" [" + Board[i][j].getLetter() + "]");
        }
       }
-      System.out.println();
+       System.out.println();
+      }
      }
+
     }
 
-}

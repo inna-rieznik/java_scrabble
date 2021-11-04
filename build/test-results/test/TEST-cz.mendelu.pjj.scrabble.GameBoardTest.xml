@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="cz.mendelu.pjj.scrabble.GameBoardTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-31T14:25:50" hostname="DESKTOP-UU3V2MM" time="0.025">
+<testsuite name="cz.mendelu.pjj.scrabble.GameBoardTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-03T22:08:35" hostname="DESKTOP-6P7EMEJ" time="0.024">
   <properties/>
-  <testcase name="addLetterToXY()" classname="cz.mendelu.pjj.scrabble.GameBoardTest" time="0.025"/>
+  <testcase name="addLetterToXYOutOfBoundY()" classname="cz.mendelu.pjj.scrabble.GameBoardTest" time="0.024"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

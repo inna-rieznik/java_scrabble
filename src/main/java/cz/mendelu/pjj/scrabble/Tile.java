@@ -5,12 +5,16 @@ public class Tile {
     private  int points;
     private  int count;
 
+    /**
+     *
+     */
     public Tile(char letter, int points, int count) {
     this.letter = letter;
     this.points = points;
     this.count = count;
 
     }
+
 
     public char getLetter() {
         return letter;

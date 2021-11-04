@@ -4,12 +4,18 @@ package cz.mendelu.pjj.scrabble;
 public class Cell {
     private char letter;
     private String bonus; // типы бонуса за ячейку
-
+    /**
+     * Standardní konstruktor.
+     *
+     */
     public Cell(){
         letter = ' ';
         bonus = null;
     }
-
+    /**
+     *
+     *
+     */
     public Cell(char letter){
         this.letter = letter;
     }
