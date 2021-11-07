@@ -1,11 +1,6 @@
 package cz.mendelu.pjj.scrabble;
 
 import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -21,14 +16,20 @@ public class Dictionary {
 //        System.out.println(words);
 //    }
 
-//    private List<String> words = new ArrayList<>(Arrays.asList("hello"));
-//
-//    public Dictionary(String dic, WordFilter wordFilter){
-//        try(String br = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream(dic),"UTF-8"))) {
-//            words = br.lines().filter(wordFilter::acceptWord).map(wordFilter::transformWord).collect(Collectors.toList());
-//        }catch (IOException | NullPointerException){
-//            throw new LoadDictionaryException;
-//        }
-//    }
+    private List<String> words = new ArrayList<>(Arrays.asList("hello"));
+
+    public Dictionary(String dic, WordFilter wordFilter){
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream(dic),"UTF-8"))) {
+            words = br.lines()
+                      .collect(Collectors.toList());
+        }catch (IOException | NullPointerException e){
+            e.printStackTrace();
+        }
+    }
+
+    public int getSize(){
+        System.out.println(words.get(0));
+        return words.size();
+    }
 
 }

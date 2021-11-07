@@ -10,6 +10,12 @@ import static cz.mendelu.pjj.scrabble.Player.*;
 
 public class ScrabbleGame {
 
+    private Dictionary dic;
+
+    public ScrabbleGame(Dictionary dic){
+        this.dic = dic;
+    }
+
     private static void createPlayers(){
         //TODO add scanner to read players names
 //        Scanner n = new Scanner(System.in);
