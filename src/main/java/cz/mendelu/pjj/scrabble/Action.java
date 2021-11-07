@@ -27,13 +27,5 @@ public class Action {
         throw new UnsupportedOperationException("Not implemented yet.");
     }
 
-    /**
-     * Metoda urči ktery player zacina hru
-     * Metoda urči kery player ma u sebe pismeno, ktere je nejbliz od zacatku abecedy
-     *
-     */
-    public void chekFirstMoveRequipments(){
-        throw new UnsupportedOperationException("Not implemented yet.");
 
-    }
 }

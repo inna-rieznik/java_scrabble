@@ -78,10 +78,13 @@ public class ScrabbleGame {
                 //TODO jestli slovo neexistuje odebrat pismena s bordu
                 activePlayer.chooseLetter(board);
             } else if (input.toLowerCase().equals("letters")) {
-                System.out.println();
-                System.out.print("Letters: ");
-                activePlayer.showPlayerHand();
-                System.out.println();
+
+                    System.out.println();
+                    System.out.print("Letters: ");
+                    activePlayer.showPlayerHand();
+                    System.out.println();
+
+
             } else if (input.toLowerCase().equals("board")) {
                 showGameBoard();
             }
