@@ -26,4 +26,43 @@ class PlayerTest {
         }
         assertEquals(expCount, resCount);
     }
+    @Test
+    void isLetterInHand() {
+        char[] handPlayer = {'A','B','C','E','*','F','F'};
+        char letter = 'B';
+        boolean res = true;
+
+        boolean letterEx = false;
+        for (int i =0; i<7; i++){
+            if (letter == handPlayer[i]){
+                letterEx = true;
+                break;
+                //return true;
+            } else {
+                letterEx = false;
+                //return false;
+            }
+        }
+        assertEquals(res, letterEx);
+    }
+
+    @Test
+    void isLetterInHandV2() {
+        char[] handPlayer = {'A','B','C','E','*','F','F'};
+        char letter = 'Z';
+        boolean res = false;
+
+        boolean letterEx = false;
+        for (int i =0; i<7; i++){
+            if (letter == handPlayer[i]){
+                letterEx = true;
+                break;
+                //return true;
+            } else {
+                letterEx = false;
+                //return false;
+            }
+        }
+        assertEquals(res, letterEx);
+    }
 }

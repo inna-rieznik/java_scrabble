@@ -14,10 +14,7 @@ import static cz.mendelu.pjj.scrabble.GameBoard.*;
 //nacist soubor po radcich a udelat s neho pole,
 //if slovo existuje v hash mape -> existuje/ne ?
 
-//while nekonecny loop
-//spustit aplikaci dvakrat jako dva hraci -> simiulovat na pc
 
-//napriklad kdyz na rade hrac 1 pro neho zobrazit prikazy : pridat slovo, pass, skip
 
 //
 public class Player {
@@ -86,24 +83,36 @@ public class Player {
     public void chooseLetter(GameBoard board) {
         //@jestli slovo existuje jen pak davat bonusy
         //StringBuffer word = new StringBuffer();
-        System.out.print("*Add X coordinate for letter(number from 1 to 15): ");
-        Scanner s_x = new Scanner(System.in);
-        int x = s_x.nextInt();
-        System.out.print("*Add Y coordinate for letter(number from 1 to 15): ");
-        Scanner s_y = new Scanner(System.in);
-        int y = s_y.nextInt();
-        System.out.print("*Add letter: ");
-        Scanner s_letter = new Scanner(System.in);
-        //String s_letter = scanner.nextLine();
+        int endWord = 0;
 
-        char letter = s_letter.nextLine().toUpperCase().charAt(0);
-            if (isLetterInHand(letter)){
+        while(endWord !=1) {
+            System.out.print("*Add X coordinate for letter(number from 1 to 15): ");
+            Scanner s_x = new Scanner(System.in);
+            int x = s_x.nextInt();
+            System.out.print("*Add Y coordinate for letter(number from 1 to 15): ");
+            Scanner s_y = new Scanner(System.in);
+            int y = s_y.nextInt();
+            System.out.print("*Add letter: ");
+            Scanner s_letter = new Scanner(System.in);
+            //String s_letter = scanner.nextLine();
+            char letter = s_letter.nextLine().toUpperCase().charAt(0);
+
+            if (isLetterInHand(letter)) {
                 //TODO Убрать из руки буквы
                 //pridat do bordu pismeno
-                board.addLetterToXY(x,y,letter);
-            }else{
+                board.addLetterToXY(x, y, letter);
+            } else {
                 System.out.print("You dont have this letter " + letter);
             }
+
+            System.out.print("End?");
+            Scanner e_w = new Scanner(System.in);
+            endWord = e_w.nextInt();
+        }
+        if (board.chekFirstMoveRequipments() == false ){
+            System.out.println("ne spravny pervni krok");
+            board.nullBoard();
+        }
 
     }
     /**

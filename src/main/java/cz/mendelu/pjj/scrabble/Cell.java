@@ -1,9 +1,9 @@
 package cz.mendelu.pjj.scrabble;
 
-// сделал клас для ячеек. чтоб матрицу заполнить
+
 public class Cell {
     private char letter;
-    private String bonus; // типы бонуса за ячейку
+    private String bonus;
     /**
      * Standardní konstruktor.
      *
