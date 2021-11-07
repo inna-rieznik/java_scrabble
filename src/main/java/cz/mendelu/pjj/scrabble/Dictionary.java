@@ -27,9 +27,10 @@ public class Dictionary {
         }
     }
 
-    public int getSize(){
-        System.out.println(words.get(0));
-        return words.size();
+    public void ifWordIsInList(StringBuilder word){
+        if(words.contains(word)){
+            System.out.println(true);
+        }
     }
 
 }

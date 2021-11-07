@@ -4,34 +4,57 @@ public class GameBoard {
  public static Cell[][] Board = new Cell[15][15];
 
  public GameBoard() {
-
  }
 
  /**
   * Metoda pridava pismeno do bunky
-  *
   * @autor xrieznik
   * @version etapa 3
   */
  public void addLetterToXY(int x, int y, char letter) {
-  //if ( (x>0 && x<16) && (y>0 && y<16) ){
-  //if (Board[x-1][y-1].getLetter() == ' '){
+  //if ( (x>0 && x<16) && (y>0 && y<16) ){ //if (Board[x-1][y-1].getLetter() == ' '){
   Board[x - 1][y - 1].setLetter(letter);
-  // } else {
-  // System.out.println("There is a letter in the cell: " + x + " " + y);
-  //}
-  // }else {
-  //  System.out.println("x or y is out of range");
-  // }
+  // } else { // System.out.println("There is a letter in the cell: " + x + " " + y); //} // }else { //  System.out.println("x or y is out of range"); // }
+  }
 
-     /*junit test ktery vola add letter
-      1. bord je
-     2. validni scenar x in range 0-15(x je male/velke)
-     3. 2. for y
-      x y out of range
+  /*
+ public char getLetterFromXY(int x1, int y1) {
+  char letter = Board[x1][y1].getLetter();
+  return letter;
+ }*/
+
+  //jako parametr musime pridat letter ktery user umistil na board
+//cteme pismena s boardu -> nacteme x pro prvni pismeno, a x pro posledni pismeno
+// nacteme y pro prvni, a y pro posledni pismeno
+//uvnitr loop od x1 do xn -> nacteme vsechny pismena do slova -> slovo ktere dostaneme porovname ze slovem from dictionary
+
+ /*public StringBuffer createWordFromLettersInBoard(){
+  char letter = board.getLetter();
+  StringBuffer word = new StringBuffer();
+  word = word.append(letter);
+  return word;
+ }*/
+
+//x_start y_start = coordinates for the fist letter from users input
+ //TODO what to do if the first or the last letters is already is in the board ??????????
+ /*public StringBuffer createWordFromLettersInBoard(int x_start, int x_end, int y_start, int y_end) {
+  char letter = 0;
+  StringBuffer word = new StringBuffer();
+  for (int i = x_start; i <= x_end; i++) {
+   for (int j = y_start; j <= y_end; j++) {
+    letter = Board[i][j].getLetter();
+    word = word.append(letter);
+   }
+  }
+  return word;
+ }
+*/
+     /*junit test ktery vola add letter: 1. bord je 2. validni scenar x in range 0-15(x je male/velke) 3. for y 4. x y out of range
      */
 
- }
+
+
+
 
  /**
   * @autor xmeliaki

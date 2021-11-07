@@ -80,11 +80,11 @@ public class Player {
      * @autor xrieznik
      * @version etapa 3
      */
-    public void chooseLetter(GameBoard board) {
-        //@jestli slovo existuje jen pak davat bonusy
-        //StringBuffer word = new StringBuffer();
-        int endWord = 0;
 
+    public StringBuilder chooseLetter(GameBoard board) {
+        //@jestli slovo existuje jen pak davat bonusy
+        int endWord = 0;
+        //loop while player do not enter 0 -> reperat zadavani x,y ,letter
         while(endWord !=1) {
             System.out.print("*Add X coordinate for letter(number from 1 to 15): ");
             Scanner s_x = new Scanner(System.in);
@@ -94,7 +94,6 @@ public class Player {
             int y = s_y.nextInt();
             System.out.print("*Add letter: ");
             Scanner s_letter = new Scanner(System.in);
-            //String s_letter = scanner.nextLine();
             char letter = s_letter.nextLine().toUpperCase().charAt(0);
 
             if (isLetterInHand(letter)) {
@@ -106,6 +105,7 @@ public class Player {
             }
 
             System.out.print("End?");
+            word = word.append(letter);
             Scanner e_w = new Scanner(System.in);
             endWord = e_w.nextInt();
         }
@@ -113,15 +113,13 @@ public class Player {
             System.out.println("ne spravny pervni krok");
             board.nullBoard();
         }
-
+        return word;
     }
     /**
      *
      */
-    public void createWord(){
-    //TODO get word from choosen letters
-        throw new UnsupportedOperationException("Not implemented yet.");
-    }
+
+
 
 
     /**

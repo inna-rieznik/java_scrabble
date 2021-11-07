@@ -1,12 +1,9 @@
 package cz.mendelu.pjj.scrabble;
 
-import java.util.Locale;
 import java.util.Scanner;
 
-import static cz.mendelu.pjj.scrabble.GameBoard.createGameBoard;
-import static cz.mendelu.pjj.scrabble.GameBoard.showGameBoard;
+import static cz.mendelu.pjj.scrabble.GameBoard.*;
 import static cz.mendelu.pjj.scrabble.TilesBag.*;
-import static cz.mendelu.pjj.scrabble.Player.*;
 
 public class ScrabbleGame {
 
@@ -77,14 +74,13 @@ public class ScrabbleGame {
                 //TODO jestli existuje odebrat pismena u playera, pridat body
                 //TODO jestli slovo neexistuje odebrat pismena s bordu
                 activePlayer.chooseLetter(board);
-            } else if (input.toLowerCase().equals("letters")) {
 
+
+            } else if (input.toLowerCase().equals("letters")) {
                     System.out.println();
                     System.out.print("Letters: ");
                     activePlayer.showPlayerHand();
                     System.out.println();
-
-
             } else if (input.toLowerCase().equals("board")) {
                 showGameBoard();
             }
@@ -92,8 +88,26 @@ public class ScrabbleGame {
                 System.out.println("Dont know this command");
             }
         }
+
+
     }
-//
+
+    /**
+     * tato metoda slouzi jen pro kontrolu jestli je mozne vyhledat slovo v dictionary
+     * @return
+     */
+
+
+
+//just a test method
+    public String createWord(){
+        //TODO get word from choosen letters
+        //string buffer : word = ' ' -> word.append
+        System.out.print("Enter word: ");
+        Scanner s_word = new Scanner(System.in);
+        String word = s_word.nextLine().toUpperCase();
+        return word;
+    }
 
 
     private void checkEndOfTheGame() {

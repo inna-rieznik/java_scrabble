@@ -36,11 +36,9 @@ class GameBoardTest {
         GameBoard b = new GameBoard();
         GameBoard.createGameBoard();
 
-       // Exception exception =
         assertThrows(
                 ArrayIndexOutOfBoundsException.class,
                 () -> b.addLetterToXY(x, y, a));
-        //assertTrue(exception.getMessage().contains("index"));
 
     }
 
@@ -52,6 +50,23 @@ class GameBoardTest {
     @Test
     void addLetterToXYOutOfBoundY() {
         int x = 2;
+        int y = -10;
+        char a = 'A';
+        GameBoard b = new GameBoard();
+        GameBoard.createGameBoard();
+
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+            b.addLetterToXY(x, y, a);
+        });
+    }
+    /**
+     * x and y out of bound
+     * @autor xrieznik
+     * @version etapa 2
+     */
+    @Test
+    void addLetterToXYOutOfBoundXY() {
+        int x = 25;
         int y = -10;
         char a = 'A';
         GameBoard b = new GameBoard();

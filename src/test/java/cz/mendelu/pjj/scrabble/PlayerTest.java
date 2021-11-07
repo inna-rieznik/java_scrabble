@@ -26,6 +26,11 @@ class PlayerTest {
         }
         assertEquals(expCount, resCount);
     }
+    /**
+     *
+     * @autor xmeliaki
+     * @version etapa 2
+     */
     @Test
     void isLetterInHand() {
         char[] handPlayer = {'A','B','C','E','*','F','F'};
@@ -45,7 +50,11 @@ class PlayerTest {
         }
         assertEquals(res, letterEx);
     }
-
+    /**
+     *
+     * @autor xmeliaki
+     * @version etapa 2
+     */
     @Test
     void isLetterInHandV2() {
         char[] handPlayer = {'A','B','C','E','*','F','F'};
