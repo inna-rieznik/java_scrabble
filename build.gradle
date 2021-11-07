@@ -11,7 +11,7 @@ tasks.withType(JavaCompile) {
 group 'cz.mendelu.pjj.project'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 11
 
 repositories {
     mavenCentral()
@@ -24,3 +24,4 @@ test {
 dependencies {
     testCompile "org.junit.jupiter:junit-jupiter:5.+"
 }
+targetCompatibility = JavaVersion.VERSION_11

@@ -19,7 +19,7 @@ public class Action {
     }
 
     /**
-     * Metoda, která shazuje všechny kameny z ruky.
+     * Metoda, která vymeni všechny kameny pro playera.
      *
      * @autor
      */
@@ -28,7 +28,8 @@ public class Action {
     }
 
     /**
-     * Metoda ovládání prvního tahu
+     * Metoda urči ktery player zacina hru
+     * Metoda urči kery player ma u sebe pismeno, ktere je nejbliz od zacatku abecedy
      *
      */
     public void chekFirstMoveRequipments(){

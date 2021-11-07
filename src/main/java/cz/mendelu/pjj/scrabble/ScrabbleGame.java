@@ -39,6 +39,7 @@ public class ScrabbleGame {
      * @version etapa 3
      */
     static void startGame(){
+        //test: if board exist ? is player1,2 exists ?
         GameBoard board = new GameBoard();
         System.out.println("*********************************************");
         createTilesBag();

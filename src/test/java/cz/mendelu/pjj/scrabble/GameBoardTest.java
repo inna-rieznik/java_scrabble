@@ -2,12 +2,13 @@ package cz.mendelu.pjj.scrabble;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import sun.jvm.hotspot.utilities.Assert;
+//import sun.jvm.hotspot.utilities.Assert;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameBoardTest {
-    /** 
+    /**
+     * x and y is in range 1-15
      * @autor xrieznik
      * @version etapa 2
      */
@@ -23,6 +24,7 @@ class GameBoardTest {
     }
 
     /**
+     * x out of bound
      * @autor xrieznik
      * @version etapa 2
      */
@@ -42,7 +44,11 @@ class GameBoardTest {
 
     }
 
-
+    /**
+     * y out of bound
+     * @autor xrieznik
+     * @version etapa 2
+     */
     @Test
     void addLetterToXYOutOfBoundY() {
         int x = 2;

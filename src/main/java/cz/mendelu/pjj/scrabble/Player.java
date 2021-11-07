@@ -1,6 +1,6 @@
 package cz.mendelu.pjj.scrabble;
 
-import com.sun.tools.jdeprscan.scan.Scan;
+//import com.sun.tools.jdeprscan.scan.Scan;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -53,18 +53,20 @@ public class Player {
     }
 
     /**
-     * Vyměňte 1 kámen
+     * Metoda vyměni 1 kamen, ktery zvoli player za novy z TilesBagu
      *
      * @autor xmeliaki
      * @version etapa 3
      */
     public char swapOneTile(char znak){
+        //vymeni zvolene pismeno za nove
         for (int i = 0; i<7; i++) {
             if(handPlayer[i] == znak){
                handPlayer[i] = getOneTile();
                return handPlayer[i];
             }
         }
+        //zvysi count pro vracene pismeno
         for (int i = 0; i<TheTilesBag.length; i++) {
             if(TheTilesBag[i].getLetter() == znak){
                 TheTilesBag[i].setCount(TheTilesBag[i].getCount()+1);
@@ -75,13 +77,14 @@ public class Player {
 
 
     /**
-     * metoda umoznuje pro playera zvolit pismeno a koordinaty x,y ktere chce vlozit do bordu, a dale
+     * metoda umoznuje pro playera zvolit pismeno (a koordinaty x,y) ktere chce vlozit do bordu, a dale
      * metoda umisti pismeno na zvolenou bunku na boardu
      *
      * @autor xrieznik
      * @version etapa 3
      */
-    public void chooseLetter(GameBoard board) {   //@jestli slovo existuje jen pak davat bonusy
+    public void chooseLetter(GameBoard board) {
+        //@jestli slovo existuje jen pak davat bonusy
         //StringBuffer word = new StringBuffer();
         System.out.print("*Add X coordinate for letter(number from 1 to 15): ");
         Scanner s_x = new Scanner(System.in);

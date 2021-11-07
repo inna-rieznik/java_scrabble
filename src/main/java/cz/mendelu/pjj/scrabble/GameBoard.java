@@ -23,13 +23,13 @@ public class GameBoard {
     //  System.out.println("x or y is out of range");
     // }
 
-     //junit test ktery vola add letter
-     // 1. bord je
-     //2. validni scenar x in range 0-15(x je male/velke)
-     //3. 2. for y
-     // x y out of range
+     /*junit test ktery vola add letter
+      1. bord je
+     2. validni scenar x in range 0-15(x je male/velke)
+     3. 2. for y
+      x y out of range
+     */
 
-     //
     }
     /**
      * @autor xmeliaki
