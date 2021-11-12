@@ -83,7 +83,7 @@ public class Player {
             board.nullBoard();
         }
 
-        //TODO kodLetters must be 1
+        //TODO kodLetters must be
 
     }
     /**

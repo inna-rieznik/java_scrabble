@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cz.mendelu.pjj.scrabble.TilesBagTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-07T21:27:59" hostname="DESKTOP-6P7EMEJ" time="0.016">
+  <properties/>
+  <testcase name="getOneTile()" classname="cz.mendelu.pjj.scrabble.TilesBagTest" time="0.016"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
