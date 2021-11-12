@@ -5,6 +5,7 @@ public class Tile {
     private  int points;
     private  int count;
 
+
     /**
      *
      */
@@ -12,6 +13,7 @@ public class Tile {
     this.letter = letter;
     this.points = points;
     this.count = count;
+
 
     }
 

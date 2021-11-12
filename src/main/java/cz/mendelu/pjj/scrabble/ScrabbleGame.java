@@ -76,7 +76,7 @@ public class ScrabbleGame {
                 //TODO zkontrolovat to slovo jestli existuje v dictionary
                 //TODO jestli existuje odebrat pismena u playera, pridat body
                 //TODO jestli slovo neexistuje odebrat pismena s bordu
-                activePlayer.chooseLetter(board);
+                activePlayer.moveOn(board);
             } else if (input.toLowerCase().equals("letters")) {
 
                     System.out.println();

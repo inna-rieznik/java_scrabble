@@ -168,5 +168,59 @@ public class GameBoard {
    }
   }
  }
+
+ public boolean cellIsNull (int x, int y){
+  if (Board[x][y].getLetter() != ' '){
+   return true;
+  }else {
+   return false;
+  }
+ }
+
+ public void createWord(int firstX, int firstY, GameBoard board, int countLetters){
+  // String s = new StringBuilder().append(char1).append(char2).append(char3).toString();
+  String word;
+  int i = 0;
+  int realFirstX = 0;
+  switch(Board[firstX][firstY].getKodStavu()) {
+   case 0:
+    // code block
+    break;
+
+   case 1:
+    // code block
+    break;
+
+   case 2:
+    // estli slowo stroka
+    if(Board[firstX-1][firstY].getKodStavu()==0) {
+     while (Board[firstX+i][firstY].getKodStavu()!= 0){
+      word = new StringBuilder().append(Board[i][firstY].getLetter()).toString();
+      i++;
+     }
+     //todo controla slova
+    }else {
+     while(Board[firstX-i][firstY].getKodStavu()!=0){
+      realFirstX = firstX-i;
+     }
+     while (Board[realFirstX+i][firstY].getKodStavu()!= 0){
+      word = new StringBuilder().append(Board[i][firstY].getLetter()).toString();
+      i++;
+     }
+
+    }
+    break;
+   default:
+    // code block
+  }
+
+ }
+
+
+
+ public char getLetter (int x, int y){
+  return Board[x][y].getLetter();
+ }
+
 }
 

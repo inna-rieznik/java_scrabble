@@ -2,6 +2,7 @@ package cz.mendelu.pjj.scrabble;
 
 public class TilesBag {
     public static Tile[] TheTilesBag = new Tile[27];
+    static public int allCount = 110;
     /**
      *
      */
@@ -40,7 +41,7 @@ public class TilesBag {
         TheTilesBag[23] = new Tile(	'J',8,1);
         TheTilesBag[24] = new Tile(	'X',8,1);
         TheTilesBag[25] = new Tile(	'Q',10,1);
-        TheTilesBag[26] = new Tile(	'Z',10,1);
+        TheTilesBag[26] = new Tile(	'Z',10,1); //110
     }
 
     /**
