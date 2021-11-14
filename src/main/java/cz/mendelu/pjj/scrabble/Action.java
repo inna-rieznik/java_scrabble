@@ -1,14 +1,7 @@
 package cz.mendelu.pjj.scrabble;
 
 public class Action {
-    /**
-     * Metoda provádění přesunu
-     *
-     * @autor
-     */
-    public static void moveOn() {
-        throw new UnsupportedOperationException("Not implemented yet.");
-    }
+
     /**
      * Metoda přeskočení zatáčky.
      *

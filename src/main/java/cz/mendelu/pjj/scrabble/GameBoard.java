@@ -8,6 +8,7 @@ public class GameBoard {
 
  /**
   * Metoda pridava pismeno do bunky
+  *
   * @autor xrieznik
   * @version etapa 3
   */
@@ -15,7 +16,7 @@ public class GameBoard {
   //if ( (x>0 && x<16) && (y>0 && y<16) ){ //if (Board[x-1][y-1].getLetter() == ' '){
   Board[x - 1][y - 1].setLetter(letter);
   // } else { // System.out.println("There is a letter in the cell: " + x + " " + y); //} // }else { //  System.out.println("x or y is out of range"); // }
-  }
+ }
 
   /*
  public char getLetterFromXY(int x1, int y1) {
@@ -23,7 +24,7 @@ public class GameBoard {
   return letter;
  }*/
 
-  //jako parametr musime pridat letter ktery user umistil na board
+ //jako parametr musime pridat letter ktery user umistil na board
 //cteme pismena s boardu -> nacteme x pro prvni pismeno, a x pro posledni pismeno
 // nacteme y pro prvni, a y pro posledni pismeno
 //uvnitr loop od x1 do xn -> nacteme vsechny pismena do slova -> slovo ktere dostaneme porovname ze slovem from dictionary
@@ -49,11 +50,8 @@ public class GameBoard {
   return word;
  }
 */
-     /*junit test ktery vola add letter: 1. bord je 2. validni scenar x in range 0-15(x je male/velke) 3. for y 4. x y out of range
-     */
-
-
-
+ /*junit test ktery vola add letter: 1. bord je 2. validni scenar x in range 0-15(x je male/velke) 3. for y 4. x y out of range
+  */
 
 
  /**
@@ -171,9 +169,7 @@ public class GameBoard {
   }
  }
 
-
  /**
-  *
   *
   */
  public boolean chekFirstMoveRequipments() {
@@ -192,52 +188,76 @@ public class GameBoard {
   }
  }
 
- public boolean cellIsNull (int x, int y){
-  if (Board[x][y].getLetter() != ' '){
+ public boolean cellIsNull(int x, int y) {
+  if (Board[x][y].getLetter() != ' ') {
    return true;
-  }else {
+  } else {
    return false;
   }
  }
-
- public void createWord(int firstX, int firstY, GameBoard board, int countLetters){
-  // String s = new StringBuilder().append(char1).append(char2).append(char3).toString();
-  String word;
+ /**
+  * @autor xmeliaki
+  * @version etapa 3
+  * toString()
+  */
+ public String readWordByX(int firstX, int firstY, GameBoard board) {
   int i = 0;
+  String word = null;
+  String error = " ";
   int realFirstX = 0;
-  switch(Board[firstX][firstY].getKodStavu()) {
-   case 0:
-    // code block
-    break;
 
-   case 1:
-    // code block
-    break;
-
-   case 2:
-    // estli slowo stroka
-    if(Board[firstX-1][firstY].getKodStavu()==0) {
-     while (Board[firstX+i][firstY].getKodStavu()!= 0){
-      word = new StringBuilder().append(Board[i][firstY].getLetter()).toString();
-      i++;
-     }
-     //todo controla slova
-    }else {
-     while(Board[firstX-i][firstY].getKodStavu()!=0){
-      realFirstX = firstX-i;
-     }
-     while (Board[realFirstX+i][firstY].getKodStavu()!= 0){
-      word = new StringBuilder().append(Board[i][firstY].getLetter()).toString();
-      i++;
-     }
-
-    }
-    break;
-   default:
-    // code block
+  while (Board[firstX - i][firstY].getKodStavu() != 0) {
+   realFirstX = firstX - i;
+   i++;
   }
 
+  i = 0;
+  while (Board[realFirstX + i][firstY].getKodStavu() != 0) {
+   i = realFirstX;
+   word = new StringBuilder().append(Board[i][firstY].getLetter()).toString();
+   i++;
+  }
+  if (true) { //todo controla slova
+   Player.setScore(pointsСounting(realFirstX,firstY,i,0,board));
+   return word;
+  } else {
+   return error;
+  }
+  //todo dobavit body
  }
+ /**
+  * @autor xmeliaki
+  * @version etapa 3
+  * toString()
+  */
+ public String readWordByY(int firstX, int firstY, GameBoard board) {
+  int j = 0;
+  String word = null;
+  String error = " ";
+  int realFirstY = 0;
+
+  while (Board[firstX][firstY - j].getKodStavu() != 0) {
+   realFirstY = firstY - j;
+   j++;
+  }
+  j=0;
+  while (Board[firstX][firstY + j].getKodStavu() != 0) {
+   j = firstY;
+   word = new StringBuilder().append(Board[firstX][j].getLetter()).toString();
+   j++;
+  }
+   if (true) { //todo controla slova
+    Player.setScore(pointsСounting(firstX,realFirstY,0,j,board));
+    return word;
+   } else {
+    return error;
+   }
+ }
+
+  public void createWord ( int firstX, int firstY, GameBoard board,int countLetters){
+   readWordByX(firstX,firstY,board);
+   readWordByY(firstX,firstY,board);
+  }
 
 
 
@@ -245,5 +265,24 @@ public class GameBoard {
   return Board[x][y].getLetter();
  }
 
+
+public int pointsСounting (int firstX, int firstY, int i, int j,GameBoard board){
+ int ponts =0;
+ int bonusCoefficient =1;
+ while (i>0 || j>0){
+  if(Board[firstX+i][firstY+j].getBonus()==null){
+   ponts = ponts + TilesBag.getBonusLetter(Board[firstX+i][firstY+j].getLetter());
+  }else if (Board[firstX+i][firstY+j].getBonus()=="2L"){
+   ponts = ponts + TilesBag.getBonusLetter(Board[firstX+i][firstY+j].getLetter()) * 2;
+  }else if (Board[firstX+i][firstY+j].getBonus()=="3L"){
+   ponts = ponts + TilesBag.getBonusLetter(Board[firstX+i][firstY+j].getLetter()) * 3;
+  }else if (Board[firstX+i][firstY+j].getBonus()=="2W"){
+   bonusCoefficient=2;
+  }else if (Board[firstX+i][firstY+j].getBonus()=="2W"){
+   bonusCoefficient=3;
+  }
+ }
+return bonusCoefficient*ponts;
 }
 
+}
