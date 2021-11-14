@@ -7,14 +7,6 @@ import java.util.stream.Collectors;
 
 public class Dictionary {
 
-//    public void readFromFile() throws FileNotFoundException {
-//        Set<String> words = new HashSet<String>();
-//        Scanner s = new Scanner(new File("src/main/resources/words.txt"));
-//        while (s.hasNextLine()){
-//            words.add(s.nextLine());
-//        }
-//        System.out.println(words);
-//    }
 
     private List<String> words = new ArrayList<>(Arrays.asList("hello"));
 

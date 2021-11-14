@@ -60,7 +60,7 @@ public class ScrabbleGame {
         while (true){
             System.out.println();
             System.out.print("Chose a command: \nEXIT - to finish the game \nPASS - to let another player create word" +
-                    "\nWORD - to eenter new word \nLETTERS - to show what letters you have \nBOARD - to show game board" +
+                    "\nWORD - to enter new word \nLETTERS - to show what letters you have \nBOARD - to show game board" +
                     "\nstart there -> ");
             Scanner s_input = new Scanner(System.in);
             String input = s_input.nextLine();
@@ -78,13 +78,10 @@ public class ScrabbleGame {
                 //TODO jestli slovo neexistuje odebrat pismena s bordu
                 activePlayer.moveOn(board);
             } else if (input.toLowerCase().equals("letters")) {
-
                     System.out.println();
                     System.out.print("Letters: ");
                     activePlayer.showPlayerHand();
                     System.out.println();
-
-
             } else if (input.toLowerCase().equals("board")) {
                 showGameBoard();
             }

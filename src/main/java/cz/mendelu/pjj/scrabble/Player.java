@@ -2,9 +2,13 @@ package cz.mendelu.pjj.scrabble;
 
 //import com.sun.tools.jdeprscan.scan.Scan;
 
-import java.util.Scanner;
 
-import static cz.mendelu.pjj.scrabble.TilesBag.*;
+import java.util.Scanner;
+import java.util.Arrays;
+import static cz.mendelu.pjj.scrabble.TilesBag.TheTilesBag;
+import static cz.mendelu.pjj.scrabble.TilesBag.getOneTile;
+//import org.apache.commons.lang3.ArrayUtils;
+
 
 //nacist soubor po radcich a udelat s neho pole,
 //if slovo existuje v hash mape -> existuje/ne ?
@@ -67,11 +71,13 @@ public class Player {
      *
      */
     public void moveOn(GameBoard board){
+        //TODO after player submit end of the word -> call method replace '_' for new letters
         int countLetters = 0;
         int endMove = 0;
         while (endMove != 1) {
             char letter = chooseLetter();
             choosePositions(letter, board,countLetters);
+            removeUsedLetter(letter);
             countLetters++;
             System.out.print("konec slova? ");
             Scanner s_endMove = new Scanner(System.in);
@@ -82,10 +88,30 @@ public class Player {
             System.out.println("ne spravny pervni krok");
             board.nullBoard();
         }
-
         //TODO kodLetters must be
 
     }
+
+    /**
+     * this method will remove used letters
+     * @param letter
+     * @autor xrieznik
+     * @version etapa 3
+     */
+    public void removeUsedLetter(char letter){
+        for(int i=0; i<handPlayer.length-1; i++) {
+            for (int j=i+1; j<handPlayer.length; j++) {
+                if(handPlayer[i] == letter) {
+                    if(handPlayer[i] == handPlayer[j]) {
+                        handPlayer[j] = '_';
+                    }else{
+                        handPlayer[i] = '_';
+                    }
+                }
+            }
+        }
+    }
+
     /**
      * metoda umoznuje pro playera zvolit pismeno (a koordinaty x,y) ktere chce vlozit do bordu, a dale
      * metoda umisti pismeno na zvolenou bunku na boardu
