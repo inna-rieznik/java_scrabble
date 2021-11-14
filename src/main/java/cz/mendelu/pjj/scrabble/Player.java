@@ -144,7 +144,12 @@ public class Player {
             System.out.print("ne spravny Y");
             choosePositions(letter,board,countLetters);
         }
-        board.addLetterToXY(x,y,letter);
+        if (board.cellIsNull(y,x)){
+            board.addLetterToXY(y,x,letter);
+        } else {
+            System.out.println("pozice obsazena");
+        }
+
 
         if (countLetters == 0)
         firstX=x;//   to to je posledni X a Y od nich zacneme chledat slovo
@@ -166,8 +171,8 @@ public class Player {
         return score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public static void setScore(int score) {
+        score = score;
     }
 
     public int getFirstX() {
