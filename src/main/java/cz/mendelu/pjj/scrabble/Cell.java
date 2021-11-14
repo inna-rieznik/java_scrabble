@@ -9,45 +9,61 @@ public class Cell {
 
     /**
      * Standardní konstruktor.
-     *
      */
-    public Cell(){
+    public Cell() {
         letter = ' ';
         bonus = null;
         kodStavu = 0; // 0 - prazdna, 1 - ma pismeno ale stara, 2-ma picmeno a nova
     }
+
     /**
      *
-     *
      */
-    public Cell(char letter){
+    public Cell(char letter) {
         this.letter = letter;
     }
-
+    /**
+     *@autor xrieznik
+     * @version etapa 3
+     */
     public char getLetter() {
         return letter;
     }
-
+    /**
+     *@autor xrieznik
+     * @version etapa 3
+     */
     public void setLetter(char letter) {
         this.letter = letter;
     }
-
+    /**
+     *@autor xrieznik
+     * @version etapa 3
+     */
     public String getBonus() {
         return bonus;
     }
-
+    /**
+     *@autor xrieznik
+     * @version etapa 3
+     */
     public void setBonus(String bonus) {
         this.bonus = bonus;
     }
-
+    /**
+     *@autor xmeliaki
+     * @version etapa 3
+     */
     public int getKodStavu() {
         return kodStavu;
     }
-
+    /**
+     *@autor xmeliaki
+     * @version etapa 3
+     */
     public void setKodStavu(int kodStavu) {
         this.kodStavu = kodStavu;
     }
-
 
 
 }

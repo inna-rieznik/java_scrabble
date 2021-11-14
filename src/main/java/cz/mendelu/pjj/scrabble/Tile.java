@@ -1,22 +1,20 @@
 package cz.mendelu.pjj.scrabble;
 
 public class Tile {
-    private  char letter;
-    private  int points;
-    private  int count;
-
+    private char letter;
+    private int points;
+    private int count;
 
     /**
      *
      */
     public Tile(char letter, int points, int count) {
-    this.letter = letter;
-    this.points = points;
-    this.count = count;
+        this.letter = letter;
+        this.points = points;
+        this.count = count;
 
 
     }
-
 
     public char getLetter() {
         return letter;
