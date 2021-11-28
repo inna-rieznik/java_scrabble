@@ -144,7 +144,7 @@ public class Player {
     }
 
     /**
-     * Metoda kontroluje správnost zadaného písmene, hráč má vybrané písmeno.
+     * Metoda kontroluje spravnost zadaného písmene, hráč má vybrané písmeno.
      *
      * @autor xmeliaki
      * @version etapa 3

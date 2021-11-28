@@ -3,7 +3,7 @@ package cz.mendelu.pjj.scrabble;
 public class Action {
 
     /**
-     * Metoda přeskočení zatáčky.
+     * Metoda umoznuje vynehat jeden tah pro playera.
      *
      * @autor
      */
@@ -12,7 +12,7 @@ public class Action {
     }
 
     /**
-     * Metoda, která vymeni všechny kameny pro playera.
+     * Metoda, ktera vymeni vsechny kameny pro playera.
      *
      * @autor
      */
