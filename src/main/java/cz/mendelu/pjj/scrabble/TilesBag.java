@@ -61,7 +61,7 @@ public class TilesBag {
     }
 
     /**
-     * Metoda vydávání 1 kamene
+     * Metoda ktera vyda 1 kamen
      *
      * @autor xmeliaki
      * @version etapa 3
@@ -88,7 +88,11 @@ public class TilesBag {
         return handBuffer;
     }
 
-
+    /**
+     * @autor xmeliaki
+     * @version etapa 3
+     *
+     */
     public static int getBonusLetter(char letter) {
         int pointsletter = 0;
         for (int i = 0; i < TheTilesBag.length; i++) {

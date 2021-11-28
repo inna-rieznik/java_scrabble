@@ -13,6 +13,11 @@ public class Dictionary {
      */
     private List<String> words = new ArrayList<>(Arrays.asList("hello"));
 
+    /**
+     * metoda spoji textovy dokument obsahujici vsehny existujici slova, ktere budeme potrebovat pro kontrolu slova od playeru
+     *@autor xrieznik
+     * @version etapa 3
+     */
     public Dictionary(String dic, WordFilter wordFilter) {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream(dic), "UTF-8"))) {
             words = br.lines()
@@ -22,6 +27,8 @@ public class Dictionary {
         }
     }
     /**
+     * metoda kontroluje jestli slovo vytvorene hracem existuje v slovniku
+     *
      *@autor xrieznik
      * @version etapa 3
      */
@@ -31,6 +38,8 @@ public class Dictionary {
         }
     }
     /**
+     *
+     *
      *@autor xrieznik
      * @version etapa 3
      */

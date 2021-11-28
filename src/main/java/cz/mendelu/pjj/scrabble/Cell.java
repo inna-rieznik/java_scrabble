@@ -26,42 +26,42 @@ public class Cell {
     }
     /**
      *@autor xrieznik
-     * @version etapa 3
+     * @version etapa 2
      */
     public char getLetter() {
         return letter;
     }
     /**
      *@autor xrieznik
-     * @version etapa 3
+     * @version etapa 2
      */
     public void setLetter(char letter) {
         this.letter = letter;
     }
     /**
      *@autor xrieznik
-     * @version etapa 3
+     * @version etapa 2
      */
     public String getBonus() {
         return bonus;
     }
     /**
      *@autor xrieznik
-     * @version etapa 3
+     * @version etapa 2
      */
     public void setBonus(String bonus) {
         this.bonus = bonus;
     }
     /**
      *@autor xmeliaki
-     * @version etapa 3
+     * @version etapa 2
      */
     public int getKodStavu() {
         return kodStavu;
     }
     /**
      *@autor xmeliaki
-     * @version etapa 3
+     * @version etapa 2
      */
     public void setKodStavu(int kodStavu) {
         this.kodStavu = kodStavu;
