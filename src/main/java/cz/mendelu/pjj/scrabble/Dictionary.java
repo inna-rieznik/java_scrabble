@@ -7,11 +7,12 @@ import java.util.stream.Collectors;
 
 public class Dictionary {
 
-    private List<String> words = new ArrayList<>(Arrays.asList("hello"));
     /**
      *@autor xrieznik
      * @version etapa 3
      */
+    private List<String> words = new ArrayList<>(Arrays.asList("hello"));
+
     public Dictionary(String dic, WordFilter wordFilter) {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream(dic), "UTF-8"))) {
             words = br.lines()
@@ -47,5 +48,15 @@ public class Dictionary {
     @Override
     public int hashCode() {
         return Objects.hash(words);
+    }
+    /**
+     *@autor xmeliaki
+     * @version etapa 3
+     */
+    @Override
+    public String toString() {
+        return "Dictionary{" +
+                "words=" + words +
+                '}';
     }
 }

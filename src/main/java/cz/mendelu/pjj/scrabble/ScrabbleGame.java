@@ -27,7 +27,7 @@ public class ScrabbleGame {
         System.out.println("*********************************************");
         createTilesBag();
         Player player1 = new Player("Georgii", get7tiles());
-        Player player2 = new Player("Jon", get7tiles());
+        Player player2 = new Player("Inna", get7tiles());
         createGameBoard();
         Player activePlayer = player1;
         System.out.println("------Now plays player: " + activePlayer.getName() + "------");
@@ -72,7 +72,7 @@ public class ScrabbleGame {
 
     }
     /**
-     * @autor xrieznik
+     * @autor xmeliaki
      * @version etapa 3
      */
     @Override
@@ -83,7 +83,7 @@ public class ScrabbleGame {
         return Objects.equals(dic, that.dic);
     }
     /**
-     * @autor xrieznik
+     * @autor xmeliaki
      * @version etapa 3
      */
     @Override

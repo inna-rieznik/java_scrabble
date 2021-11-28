@@ -33,17 +33,6 @@ public class Player {
     }
 
     /**
-     * @autor xrieznik
-     * @version etapa 3
-     */
-    public String toString(){
-        return "________________________" +
-                "\nName: " + name +
-                "\nScore: " + score +
-                "\n________________________";
-    }
-
-    /**
      *@autor xmeliaki
      * @version etapa 3
      */
@@ -165,6 +154,7 @@ public class Player {
     }
 
     /**
+     * Metoda pro volbu pozice pro pismena na game-board
      * @autor xrieznik
      * @version etapa 3
      */
@@ -272,5 +262,18 @@ public class Player {
         int result = Objects.hash(name, score, firstX, firstY);
         result = 31 * result + Arrays.hashCode(handPlayer);
         return result;
+    }
+
+    /**
+     * @autor xrieznik
+     * @version etapa 3
+     */
+    @Override
+    public String toString() {
+        return "----------------------------------" +
+                "\nPlayer name=" + name +
+                "\nscore=" + score +
+                "\nLetters=" + Arrays.toString(handPlayer) +
+                "\n----------------------------------";
     }
 }

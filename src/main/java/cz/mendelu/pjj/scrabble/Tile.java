@@ -39,4 +39,14 @@ public class Tile {
     public void setCount(int number) {
         this.count = number;
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

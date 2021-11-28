@@ -272,4 +272,5 @@ public class GameBoard {
         return bonusCoefficient * ponts;
     }
 
+
 }

@@ -12,6 +12,8 @@ public class TilesBag {
     public TilesBag() {
     }
 
+
+
     /**
      * @autor xmeliaki
      * @version etapa 3
@@ -73,7 +75,7 @@ public class TilesBag {
     }
 
     /**
-     * Metoda 7 vydávání kamene
+     * Metoda vyda 7 kamenu(tiles) playeru
      *
      * @autor xrieznik
      * @version etapa 3
@@ -97,6 +99,7 @@ public class TilesBag {
 
         return pointsletter;
     }
+
 }
 
 

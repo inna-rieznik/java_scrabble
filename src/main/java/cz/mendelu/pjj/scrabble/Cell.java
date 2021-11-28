@@ -1,6 +1,8 @@
 package cz.mendelu.pjj.scrabble;
 
 
+import java.util.Objects;
+
 public class Cell {
     private char letter;
     private String bonus;
@@ -65,5 +67,35 @@ public class Cell {
         this.kodStavu = kodStavu;
     }
 
-
+    /**
+     *@autor xmeliaki
+     * @version etapa 3
+     */
+    @Override
+    public String toString() {
+        return "Cell{" +
+                "letter=" + letter +
+                ", bonus='" + bonus + '\'' +
+                ", kodStavu=" + kodStavu +
+                '}';
+    }
+    /**
+     *@autor xmeliaki
+     * @version etapa 3
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cell cell = (Cell) o;
+        return letter == cell.letter && kodStavu == cell.kodStavu && Objects.equals(bonus, cell.bonus);
+    }
+    /**
+     *@autor xmeliaki
+     * @version etapa 3
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(letter, bonus, kodStavu);
+    }
 }
