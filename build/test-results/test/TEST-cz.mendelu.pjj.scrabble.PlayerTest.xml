@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="cz.mendelu.pjj.scrabble.PlayerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-28T20:24:42" hostname="DESKTOP-6P7EMEJ" time="0.021">
-  <properties/>
-  <testcase name="isLetterInHand()" classname="cz.mendelu.pjj.scrabble.PlayerTest" time="0.018"/>
-  <testcase name="swapOneTileTest()" classname="cz.mendelu.pjj.scrabble.PlayerTest" time="0.001"/>
-  <testcase name="isLetterInHandV2()" classname="cz.mendelu.pjj.scrabble.PlayerTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

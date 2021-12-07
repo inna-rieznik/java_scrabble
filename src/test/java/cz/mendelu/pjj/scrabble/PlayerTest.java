@@ -7,15 +7,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
 
+
     /**
-     *
-     * @autor xrieznik
+     * NOT ?????test if letters were swapped and if the count of the returned letter increased for 1 item
+     * @author xrieznik
      * @version etapa 2
      */
     @Test
     void swapOneTileTest() {
+        //setup
         createTilesBag();
         Tile t = new Tile('C', 3, 2);
+        //when
         int resCount = t.getCount();
         char znak = t.getLetter();
         int expCount = 0;
@@ -24,54 +27,46 @@ class PlayerTest {
                expCount = TheTilesBag[i].getCount();
             }
         }
+        //then
         assertEquals(expCount, resCount);
     }
     /**
      *
-     * @autor xmeliaki
+     * @author xmeliaki
      * @version etapa 2
      */
     @Test
-    void isLetterInHand() {
+    void isLetterInHandTest() {
+        //setup
         char[] handPlayer = {'A','B','C','E','*','F','F'};
-        char letter = 'B';
-        boolean res = true;
-
-        boolean letterEx = false;
-        for (int i =0; i<7; i++){
-            if (letter == handPlayer[i]){
-                letterEx = true;
-                break;
-                //return true;
-            } else {
-                letterEx = false;
-                //return false;
-            }
+        Player player1 = new Player("Georgii", handPlayer);
+        char letter = 'A';
+        //when
+        boolean res = false;
+        for (int i=0; i<7; i++){
+           if(letter == handPlayer[i]){
+            res=true;
+            break;
+           }else{
+               res=false;
+           }
         }
-        assertEquals(res, letterEx);
+        //then
+        assertTrue(res);
     }
     /**
      *
-     * @autor xmeliaki
+     * @author xmeliaki
      * @version etapa 2
      */
     @Test
     void isLetterInHandV2() {
-        char[] handPlayer = {'A','B','C','E','*','F','F'};
+        //char[] handPlayer = {'A','B','C','E','*','F','F'};
+        char[] handPlayer = get7tiles();
         char letter = 'Z';
         boolean res = false;
 
         boolean letterEx = false;
-        for (int i =0; i<7; i++){
-            if (letter == handPlayer[i]){
-                letterEx = true;
-                break;
-                //return true;
-            } else {
-                letterEx = false;
-                //return false;
-            }
-        }
         assertEquals(res, letterEx);
     }
 }

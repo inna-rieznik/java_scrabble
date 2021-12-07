@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cz.mendelu.pjj.scrabble.ScrabbleGameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-12-07T21:36:18" hostname="DESKTOP-6P7EMEJ" time="0.02">
+  <properties/>
+  <testcase name="startGame()" classname="cz.mendelu.pjj.scrabble.ScrabbleGameTest" time="0.02"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

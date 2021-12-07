@@ -84,7 +84,7 @@ public class Player {
         }
 
         if (board.chekFirstMoveRequipments() == false) {
-            System.out.println("nespravny pervni krok");
+            System.out.println("Nespravny pervni krok. Prvni pismeno ma byt na [8][8]");
             board.nullBoard();
         }
         //TODO kodLetters must be
@@ -115,7 +115,7 @@ public class Player {
     /**
      * metoda umoznuje pro playera zvolit pismeno (a koordinaty x,y) ktere chce vlozit do bordu, a dale metoda umisti pismeno na zvolenou bunku na boardu
      *
-     * @autor xrieznik
+     * @author xrieznik
      * @version etapa 3
      */
     public char chooseLetter() {
@@ -135,7 +135,7 @@ public class Player {
     /**
      * Metoda kontroluje spravnost zadaného písmene, hráč má vybrané písmeno.
      *
-     * @autor xmeliaki
+     * @author xmeliaki
      * @version etapa 3
      */
     private boolean isLetterInHand(char letter) {
@@ -155,7 +155,7 @@ public class Player {
 
     /**
      * Metoda pro volbu pozice pro pismena na game-board
-     * @autor xrieznik
+     * @author xrieznik
      * @version etapa 3
      */
     public void choosePositions(char letter, GameBoard board, int countLetters) {

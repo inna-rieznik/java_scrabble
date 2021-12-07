@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TilesBagTest {
 
     /**
-     *@autor xrieznik
+     *@author xrieznik
      * @version etapa 2
      */
     @Test
